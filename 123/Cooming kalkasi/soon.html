@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bgimg {
+        background-image: url('https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/350113599_273333571760133_5289840112802192963_n.jpg?stp=dst-jpg_p180x540&_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeF1893tcNtw1DOJKq0t45TiIHe1uYng-mggd7W5ieD6aKVHmOVDYlt2rFZ-BoSmCzhDnQmf1n8FQpkYJT4olv8J&_nc_ohc=007lgjZLZugAX9HyjI4&_nc_ht=scontent.fcai19-4.fna&oh=00_AfDHpfgGPa-M6POIhFwt_MMRfRetaVsIly-PXvCfDmO0Qg&oe=64EBF73D');
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 40px;
+    }
+
+    .topleft {
+        position: absolute;
+        top: 0;
+        left: 16px;
+    }
+
+    .bottomleft {
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+    }
+
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    hr {
+        margin: auto;
+        width: 40%;
+    }
+</style>
+
+<body>
+
+    <div class="bgimg">
+        <!-- <div class="topleft">
+            <p>Logo</p>
+        </div> -->
+        <div class="middle">
+            <h1>COMING SOON</h1>
+            <hr>
+            <p id="demo" style="font-size:50px"></p>
+        </div>
+        <!-- <div class="bottomleft">
+            <p>Some text</p>
+        </div> -->
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Aug 29, 2023 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
